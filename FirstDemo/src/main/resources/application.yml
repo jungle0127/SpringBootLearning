@@ -1,0 +1,5 @@
+server:
+  port: 8080
+  servlet: 
+    contextPath: /demo
+# the configuration of context path changed since springboot version 2.0.0
