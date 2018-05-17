@@ -59,5 +59,6 @@
 	</build>
 	<modules>
 		<module>eurika-server</module>
+		<module>microservice-provider-user</module>
 	</modules>
 </project>
