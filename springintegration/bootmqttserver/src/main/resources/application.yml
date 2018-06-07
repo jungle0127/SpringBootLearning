@@ -1,0 +1,17 @@
+server:
+  port: 8081
+com:
+  mqtt:    
+    inbound:
+      url: tpc://192.168.19.17:1883
+      clientId: demoserver-in
+      topics: topic1, topic2
+      username: usr
+      password: pwd
+    outbound:
+      url: tcp://192.168.19.17:1883
+      clientId: demoserver-out
+      topics: topic1
+      username: usr
+      password: pwd
+      
