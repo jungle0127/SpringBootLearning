@@ -17,3 +17,6 @@ http://projectreactor.io/docs/core/release/reference/#getting-started
 
 # Spring WebFlux 官方文档
 https://docs.spring.io/spring/docs/5.0.0.RC2/spring-framework-reference/web.html#web-reactive
+
+#Simple DEMO document:
+https://blog.csdn.net/get_set/article/details/79480233
