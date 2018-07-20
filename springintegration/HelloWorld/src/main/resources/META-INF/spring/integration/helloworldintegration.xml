@@ -10,4 +10,10 @@
 	<channel id="outputChannel">
 		<queue capacity="10"/>
 	</channel>
+	<service-activator 
+		output-channel="outputChannel"
+		input-channel="inputChannel"
+		ref="helloService"
+		method="sayHello" />
+	<beans:bean id="helloService" class="com.ps.integration.service.HelloService"></beans:bean>	
 </beans:beans>
