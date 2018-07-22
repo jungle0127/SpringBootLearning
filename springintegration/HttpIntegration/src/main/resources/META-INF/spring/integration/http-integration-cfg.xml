@@ -11,8 +11,5 @@
 		
 		<int:gateway id="requestGateway" service-interface="com.ps.integration.gateway.IRequestGateway"  default-request-channel="requestChannel"/>
 		
-		<int-http:outbound-gateway request-channel="requestChannel"  
-			http-method="post"
-			expected-response-type="java.lang.String" 
-			/>
+		<int-http:outbound-gateway request-channel="requestChannel"/>
 </beans>
