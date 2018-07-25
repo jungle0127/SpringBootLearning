@@ -15,3 +15,6 @@ https://github.com/spring-projects/spring-integration-samples/blob/master/basic/
 
 https://segmentfault.com/a/1190000010601548
 https://docs.spring.io/spring-integration/reference/html/mqtt.html
+
+#Spring messaging 
+http://www.cnblogs.com/davidwang456/p/4446796.html
