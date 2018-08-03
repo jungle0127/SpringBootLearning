@@ -18,3 +18,6 @@ https://docs.spring.io/spring-integration/reference/html/mqtt.html
 
 #Spring messaging 
 http://www.cnblogs.com/davidwang456/p/4446796.html
+
+#Spring integration official sample for basic-http introduction
+https://blog.csdn.net/luoww1/article/details/50555992
