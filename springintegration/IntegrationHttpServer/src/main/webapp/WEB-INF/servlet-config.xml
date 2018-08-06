@@ -10,15 +10,13 @@
 	xmlns:int-http="http://www.springframework.org/schema/integration/http"
 	xmlns:int-mail="http://www.springframework.org/schema/integration/mail">
 
-	<int:channel id="receiveChannel" />
-	<!-- 接收消息通道 -->
-	<int-http:inbound-gateway
-		request-channel="receiveChannel"  path="/receiveGateway" 
-		supported-methods="POST，GET" />
-	<!-- inbound-gateway: 用来接收请求，关联receiveChannel -->
+	<int-http:inbound-gateway request-channel="receiveChannel"
+                          path="/receiveGateway"
+                          supported-methods="POST"/>
 
+	<int:channel id="receiveChannel"/>
 
-	<int:chain input-channel="receiveChannel">		
+	<int:chain input-channel="receiveChannel">
 		<int:header-filter header-names="content-type" />
 		<int:service-activator expression="payload + ' from the other side'"/>
 	</int:chain>
