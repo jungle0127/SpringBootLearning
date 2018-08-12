@@ -1,6 +1,9 @@
 # Spring Integration with Spring Boot
 https://grokonez.com/spring-framework/spring-integration/start-spring-integration-spring-boot
 
+## Spring Integration with Spring Boot and RabbitMQ
+https://www.youtube.com/watch?v=RMD42XixCxY
+
 # spring integration 系统集成
 https://blog.csdn.net/w_x_z_/article/details/53316618
 
