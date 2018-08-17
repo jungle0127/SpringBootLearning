@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource(value = "classpath:application.properties")
 public class ProperitesResouce {
 	private String name;
-	private String eamil;
+	private String email;
 	private String blog;
 
 	/**
@@ -26,18 +26,13 @@ public class ProperitesResouce {
 		this.name = name;
 	}
 
-	/**
-	 * @return the eamil
-	 */
-	public String getEamil() {
-		return eamil;
+
+	public String getEmail() {
+		return email;
 	}
 
-	/**
-	 * @param eamil the eamil to set
-	 */
-	public void setEamil(String eamil) {
-		this.eamil = eamil;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	/**

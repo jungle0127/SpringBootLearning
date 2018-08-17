@@ -16,6 +16,6 @@ public class HelloWorld {
 	}
 	@GetMapping("/properties/name")
 	public String getProperties() {
-		return this.propertiesResouce.getName();
+		return this.propertiesResouce.getEmail();
 	}
 }
