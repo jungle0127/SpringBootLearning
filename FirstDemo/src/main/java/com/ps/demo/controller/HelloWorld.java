@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ps.demo.configuration.ProperitesResouce;
+import com.ps.demo.exception.UserInvalidException;
 
 @RestController
 public class HelloWorld {
@@ -17,5 +18,9 @@ public class HelloWorld {
 	@GetMapping("/properties/name")
 	public String getProperties() {
 		return this.propertiesResouce.getEmail();
+	}
+	@GetMapping("/user")
+	public String getUserException() {
+		throw new UserInvalidException("1");
 	}
 }
