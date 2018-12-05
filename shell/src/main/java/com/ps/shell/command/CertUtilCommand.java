@@ -5,7 +5,7 @@ import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 
 @ShellComponent(value = "Command for demo")
-public class DemoCommand {
+public class CertUtilCommand {
     @ShellMethod(value = "add numbers", key = "sum")
     public int add(int a, int b) {
         return a + b;

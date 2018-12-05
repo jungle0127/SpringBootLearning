@@ -1,0 +1,3 @@
+spring:
+  shell:
+    help: disable
