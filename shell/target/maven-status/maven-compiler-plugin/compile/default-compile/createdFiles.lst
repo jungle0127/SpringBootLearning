@@ -1,0 +1,4 @@
+com\ps\shell\config\PSPromptProvider.class
+com\ps\shell\command\BuiltInCommand.class
+com\ps\shell\Application.class
+com\ps\shell\command\CertUtilCommand.class

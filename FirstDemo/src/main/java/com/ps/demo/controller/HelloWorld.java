@@ -36,9 +36,9 @@ public class HelloWorld {
 	public String enumDemo(@RequestBody SenderType type){
 	    return type.toString();
     }
-    @InitBinder
-	public void initBinder(final WebDataBinder webDataBinder){
-        System.out.printf("initbinder runned.");
-	    webDataBinder.registerCustomEditor(SenderType.class, new SenderTypeConverter());
-    }
+//    @InitBinder
+//	public void initBinder(WebDataBinder webDataBinder){
+//        System.out.printf("initbinder runned.");
+//	    webDataBinder.registerCustomEditor(SenderType.class, new SenderTypeConverter());
+//    }
 }
