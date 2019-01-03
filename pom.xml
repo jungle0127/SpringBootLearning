@@ -19,6 +19,7 @@
 
 	<modules>
 		<module>FirstDemo</module>
+		<module>log4j2-cfg-hotdeploy</module>
 	</modules>
 
 	<build>
