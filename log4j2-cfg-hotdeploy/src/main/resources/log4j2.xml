@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN" monitorInterval="1">
+
+    <Appenders>
+
+        <Console name="Console" target="SYSTEM_OUT">
+
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+        </Console>
+
+    </Appenders>
+
+    <loggers>
+        <root level="all">
+            <appenderref ref="Console"/>
+        </root>
+    </loggers>
+
+</Configuration>
+
