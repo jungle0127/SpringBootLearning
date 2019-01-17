@@ -3,28 +3,28 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.2.RELEASE</version>
+		<groupId>com.ps</groupId>
+		<artifactId>springbootlearning</artifactId>
+		<version>1.0.0</version>
 	</parent>
-	<groupId>com.ps</groupId>
 	<artifactId>springintegration</artifactId>
-	<version>1.0.0</version>
 	<name>springintegration</name>
 	<url>http://maven.apache.org</url>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-integration</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	<modules>
+		<module>bootmqttclient</module>
+        <module>bootmqttserver</module>
+        <module>HelloWorld</module>
+        <module>HttpIntegration</module>
+	</modules>
+	<!--<dependencies>-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-integration</artifactId>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-test</artifactId>-->
+			<!--<scope>test</scope>-->
+		<!--</dependency>-->
+	<!--</dependencies>-->
 </project>

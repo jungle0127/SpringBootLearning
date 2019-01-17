@@ -6,7 +6,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ConfigurationProperties(prefix = "ps.demo.properties")
-@PropertySource(value = "classpath:application.properties")
+@PropertySource(value = "classpath:application-cfg.properties")
 public class ProperitesResouce {
 	private String name;
 	private String email;

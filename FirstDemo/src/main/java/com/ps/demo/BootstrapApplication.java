@@ -16,7 +16,7 @@ public class BootstrapApplication {
 	public static void main(String[] args) {
 //		SpringApplication.run(BootstrapApplication.class);
 		SpringApplication app = new SpringApplication(BootstrapApplication.class);
-		app.setBannerMode(Banner.Mode.OFF);
+//		app.setBannerMode(Banner.Mode.OFF);
 		app.run(args);
 		/**
 		 * Close Banner of spring boot.
