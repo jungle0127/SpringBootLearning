@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>procedure-demo</module>
-        <module>batch-process</module>
+        <module>procedure-demo-xml</module>
     </modules>
     <dependencies>
         <dependency>
