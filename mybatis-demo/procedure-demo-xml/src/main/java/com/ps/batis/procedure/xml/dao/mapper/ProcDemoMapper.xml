@@ -1,93 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ps.batis.procedure.xml.dao.domain.ProcDemoMapper">
-  <resultMap id="BaseResultMap" type="com.ps.batis.procedure.xml.dao.model.ProcDemo">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="image_url" jdbcType="VARCHAR" property="imageUrl" />
-    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, username, password, image_url, role_name
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from proc_demo
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from proc_demo
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="com.ps.batis.procedure.xml.dao.model.ProcDemo">
-    insert into proc_demo (id, username, password, 
-      image_url, role_name)
-    values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{imageUrl,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.ps.batis.procedure.xml.dao.model.ProcDemo">
-    insert into proc_demo
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="username != null">
-        username,
-      </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="imageUrl != null">
-        image_url,
-      </if>
-      <if test="roleName != null">
-        role_name,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="imageUrl != null">
-        #{imageUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="roleName != null">
-        #{roleName,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ps.batis.procedure.xml.dao.model.ProcDemo">
-    update proc_demo
-    <set>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
+    <resultMap id="BaseResultMap" type="com.ps.batis.procedure.xml.dao.model.ProcDemo">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="image_url" jdbcType="VARCHAR" property="imageUrl"/>
+        <result column="role_name" jdbcType="VARCHAR" property="roleName"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, username, password, image_url, role_name
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from proc_demo
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="validateMemberProc" statementType="CALLABLE" resultType="java.lang.String" parameterMap="requestMap">
+        call validate_members(#{userIds,mode=IN},#{splitor,mode=IN});
+    </select>
+
+    <parameterMap id="requestMap" type="java.util.Map">
+        <parameter property="userIds" jdbcType="VARCHAR" mode="IN"></parameter>
+        <parameter property="splitor" jdbcType="CHAR" mode="IN"></parameter>
+    </parameterMap>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from proc_demo
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.ps.batis.procedure.xml.dao.model.ProcDemo">
+        insert into proc_demo (id, username, password,
+        image_url, role_name)
+        values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+        #{imageUrl,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.ps.batis.procedure.xml.dao.model.ProcDemo">
+        insert into proc_demo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="imageUrl != null">
+                image_url,
+            </if>
+            <if test="roleName != null">
+                role_name,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="imageUrl != null">
+                #{imageUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="roleName != null">
+                #{roleName,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ps.batis.procedure.xml.dao.model.ProcDemo">
+        update proc_demo
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="imageUrl != null">
+                image_url = #{imageUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="roleName != null">
+                role_name = #{roleName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ps.batis.procedure.xml.dao.model.ProcDemo">
+        update proc_demo
+        set username = #{username,jdbcType=VARCHAR},
         password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="imageUrl != null">
         image_url = #{imageUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="roleName != null">
-        role_name = #{roleName,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.ps.batis.procedure.xml.dao.model.ProcDemo">
-    update proc_demo
-    set username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      image_url = #{imageUrl,jdbcType=VARCHAR},
-      role_name = #{roleName,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
+        role_name = #{roleName,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
 </mapper>

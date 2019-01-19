@@ -6,13 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.lang.reflect.MalformedParameterizedTypeException;
+import java.util.HashMap;
+import java.util.Map;
+
 @Component
 public class TestRunner implements CommandLineRunner {
     @Autowired
     private ProcDemoMapper procDemoMapper;
     @Override
     public void run(String... args) throws Exception {
-        ProcDemo procDemo = this.procDemoMapper.selectByPrimaryKey(1L);
-        System.out.println(procDemo.getUsername());
+        Map<String,String> param = new HashMap<>();
+        param.put("userIds","test");
+        param.put("splitor",",");
+
+        String procDemo  = this.procDemoMapper.validateMemberProc(param);
+        System.out.println(procDemo);
     }
 }
