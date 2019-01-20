@@ -21,11 +21,29 @@
     <select id="validateMemberProc" statementType="CALLABLE" resultType="java.lang.String" parameterMap="requestMap">
         call validate_members(#{userIds,mode=IN},#{splitor,mode=IN});
     </select>
-
+    
     <parameterMap id="requestMap" type="java.util.Map">
         <parameter property="userIds" jdbcType="VARCHAR" mode="IN"></parameter>
         <parameter property="splitor" jdbcType="CHAR" mode="IN"></parameter>
     </parameterMap>
+    
+    <select id="uspUutputParam" statementType="CALLABLE" resultType="java.lang.String" parameterMap="mixedMap">
+        call usp_output_param(#{userIds, mode=IN},#{splitor, mode=IN},#{invalid_members, mode=OUT, jdbcType=VARCHAR});
+    </select>
+    <parameterMap id="mixedMap" type="java.util.Map">
+        <parameter property="userIds" jdbcType="VARCHAR" mode="IN"></parameter>
+        <parameter property="splitor" jdbcType="CHAR" mode="IN"></parameter>
+        <parameter property="invalid_members" jdbcType="VARCHAR" mode="OUT"></parameter>
+    </parameterMap>
+
+    <select id="uspResultList" statementType="CALLABLE" resultMap="BaseResultMap" parameterMap="paramMap">
+        call usp_result_list(#{userIds, mode=IN},#{splitor, mode=IN});
+    </select>
+    <parameterMap id="paramMap" type="java.util.Map">
+        <parameter property="userIds" jdbcType="VARCHAR" mode="IN"></parameter>
+        <parameter property="splitor" jdbcType="CHAR" mode="IN"></parameter>
+    </parameterMap>
+
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         delete from proc_demo

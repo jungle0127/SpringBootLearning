@@ -50,4 +50,15 @@ public class ProcDemo {
     public void setRoleName(String roleName) {
         this.roleName = roleName == null ? null : roleName.trim();
     }
+
+    @Override
+    public String toString() {
+        return "ProcDemo{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", roleName='" + roleName + '\'' +
+                '}';
+    }
 }

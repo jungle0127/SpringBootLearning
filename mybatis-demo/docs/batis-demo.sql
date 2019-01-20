@@ -38,3 +38,21 @@ DELIMITER ;
 
 call validate_members('jinghe',',');
 
+DROP PROCEDURE IF EXISTS usp_output_param;
+
+DELIMITER //
+CREATE PROCEDURE usp_output_param(IN userIds text, IN splitor char(1), OUT invalid_members varchar(200))
+BEGIN
+    SET invalid_members = concat(userIds,splitor);
+END //
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS usp_result_list;
+
+DELIMITER //
+
+CREATE procedure usp_result_list(IN userIds text, IN splitor char(1))
+BEGIN
+    select * from proc_demo;
+END //
+DELIMITER ;
