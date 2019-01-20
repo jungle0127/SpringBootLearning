@@ -92,6 +92,18 @@
             </if>
         </trim>
     </insert>
+
+    <insert id="inserBatchRows" parameterType="java.util.List">
+        insert into proc_demo (username, password,
+        image_url, role_name)
+        values
+        <foreach collection="list" item="userItem" index="index" separator=",">
+            (
+                #{userItem.username},#{userItem.password},
+                #{userItem.imageUrl},#{userItem.roleName}
+            )
+        </foreach>
+    </insert>
     <update id="updateByPrimaryKeySelective" parameterType="com.ps.batis.procedure.xml.dao.model.ProcDemo">
         update proc_demo
         <set>

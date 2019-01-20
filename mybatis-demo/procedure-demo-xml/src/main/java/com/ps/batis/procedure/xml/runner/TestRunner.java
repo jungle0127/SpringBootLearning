@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.MalformedParameterizedTypeException;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -18,9 +19,28 @@ public class TestRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        this.insertBatchItems();
         this.testValidateMembers();
         this.testUspOutputParam();
         this.testUspResultList();
+    }
+
+    private void insertBatchItems(){
+        List<ProcDemo> procDemoList = new LinkedList<>();
+        ProcDemo procDemo = new ProcDemo();
+        procDemo.setImageUrl("b1imageurl");
+        procDemo.setPassword("b1pwd");
+        procDemo.setRoleName("b1rolename");
+        procDemo.setUsername("b1usr");
+        procDemoList.add(procDemo);
+        procDemo = new ProcDemo();
+        procDemo.setUsername("b2usr");
+        procDemo.setRoleName("b2rolename");
+        procDemo.setPassword("b2pwd");
+        procDemo.setImageUrl("b2imageurl");
+        procDemoList.add(procDemo);
+        int result = this.procDemoMapper.inserBatchRows(procDemoList);
+        System.out.println("Insert batch rows:" + result);
     }
 
     private void testValidateMembers(){

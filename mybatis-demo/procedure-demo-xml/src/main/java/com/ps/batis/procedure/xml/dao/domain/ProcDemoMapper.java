@@ -12,6 +12,8 @@ public interface ProcDemoMapper {
 
     int insertSelective(ProcDemo record);
 
+    int inserBatchRows(List<ProcDemo> userItemList);
+
     ProcDemo selectByPrimaryKey(Long id);
 
     String validateMemberProc(Map<String,String> requestMap);
