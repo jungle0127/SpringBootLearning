@@ -2,6 +2,8 @@ package com.ps.batis.procedure.xml.runner;
 
 import com.ps.batis.procedure.xml.dao.domain.ProcDemoMapper;
 import com.ps.batis.procedure.xml.dao.model.ProcDemo;
+import com.ps.batis.procedure.xml.dao.model.UsernamePassword;
+import com.ps.batis.procedure.xml.dao.model.UsernameRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -19,12 +21,29 @@ public class TestRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        this.testMultipleData();
         this.insertBatchItems();
         this.testValidateMembers();
         this.testUspOutputParam();
         this.testUspResultList();
     }
-
+    private void testMultipleData(){
+        Map<String,String> param = new HashMap<>();
+        param.put("userIds","test");
+        param.put("splitor",",");
+        List<List<?>> memberList = this.procDemoMapper.uspMultipleData(param);
+        for(List<?> item:memberList){
+            System.out.println(item.size());
+        }
+        List<UsernamePassword> usernamePasswordList = (List<UsernamePassword>)memberList.get(0);
+        for(UsernamePassword up: usernamePasswordList){
+            System.out.println(up.toString());
+        }
+        List<UsernameRole> usernameRoleList = (List<UsernameRole>) memberList.get(1);
+        for(UsernameRole ur: usernameRoleList){
+            System.out.println(ur.toString());
+        }
+    }
     private void insertBatchItems(){
         List<ProcDemo> procDemoList = new LinkedList<>();
         ProcDemo procDemo = new ProcDemo();

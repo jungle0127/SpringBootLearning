@@ -9,7 +9,7 @@ public interface ProcDemoMapper {
     int deleteByPrimaryKey(Long id);
 
     int insert(ProcDemo record);
-
+    List<List<?>> uspMultipleData(Map<String,String> requestMap);
     int insertSelective(ProcDemo record);
 
     int inserBatchRows(List<ProcDemo> userItemList);

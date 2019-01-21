@@ -7,5 +7,7 @@ spring:
     name: primary
     username: root
     password: lotus
-    url: jdbc:mysql://192.168.19.60:3306/ms_order?sessionVariables=foreign_key_checks=0&serverTimezone=CTT&useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&maxReconnects=10
+    url: jdbc:mysql://localhost:3306/batis?sessionVariables=foreign_key_checks=0&serverTimezone=CTT&useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&maxReconnects=10
     driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  config-location: classpath:/mybatis.cfg.xml

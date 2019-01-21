@@ -18,6 +18,18 @@
         where id = #{id,jdbcType=BIGINT}
     </select>
 
+    <select id="uspMultipleData" statementType="CALLABLE" parameterMap="requestMap" resultMap="usrPwdMap,usrRoleMap">
+        call usp_multiple_data(#{userIds,mode=IN},#{splitor,mode=IN});
+    </select>
+    <resultMap id="usrPwdMap" type="com.ps.batis.procedure.xml.dao.model.UsernamePassword">
+        <result column="username" property="userName"></result>
+        <result column="password" property="password"></result>
+    </resultMap>
+    <resultMap id="usrRoleMap" type="com.ps.batis.procedure.xml.dao.model.UsernameRole">
+        <result column="username" property="userName"></result>
+        <result column="role_name" property="roleName"></result>
+    </resultMap>
+    
     <select id="validateMemberProc" statementType="CALLABLE" resultType="java.lang.String" parameterMap="requestMap">
         call validate_members(#{userIds,mode=IN},#{splitor,mode=IN});
     </select>

@@ -25,6 +25,18 @@ insert into proc_demo (`username`,`password`,`image_url`,`role_name`) values('ve
 
 use batis;
 
+DROP PROCEDURE IF EXISTS usp_multiple_data;
+
+
+DELIMITER //
+CREATE PROCEDURE usp_multiple_data(IN userIds text, IN splitor char(1))
+BEGIN
+	select username, `password` from proc_demo;
+    select username, role_name from proc_demo;
+END //
+DELIMITER ;
+
+
 DROP PROCEDURE IF EXISTS validate_members;
 
 DELIMITER //
@@ -56,3 +68,9 @@ BEGIN
     select * from proc_demo;
 END //
 DELIMITER ;
+
+
+
+
+
+call usp_multiple_data('jj',',');
