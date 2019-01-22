@@ -76,6 +76,8 @@ public class TestRunner implements CommandLineRunner {
         param.put("splitor",",");
         this.procDemoMapper.uspUutputParam(param);
         System.out.println(param.get("invalid_members"));
+        System.out.println(param.get("existed_members"));
+        System.out.println(param.get("valid_members"));
     }
     private void testUspResultList(){
         Map<String,String> param = new HashMap<>();

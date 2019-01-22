@@ -53,9 +53,15 @@ call validate_members('jinghe',',');
 DROP PROCEDURE IF EXISTS usp_output_param;
 
 DELIMITER //
-CREATE PROCEDURE usp_output_param(IN userIds text, IN splitor char(1), OUT invalid_members varchar(200))
+CREATE PROCEDURE usp_output_param(IN userIds text, IN splitor char(1),
+OUT invalid_members varchar(200),
+OUT existed_members text,
+OUT valid_members text
+)
 BEGIN
     SET invalid_members = concat(userIds,splitor);
+    SET existed_members = 'existed,members';
+    SET valid_members = 'valid,members';
 END //
 DELIMITER ;
 

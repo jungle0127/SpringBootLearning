@@ -40,7 +40,11 @@
     </parameterMap>
     
     <select id="uspUutputParam" statementType="CALLABLE" resultType="java.lang.String" parameterMap="mixedMap">
-        call usp_output_param(#{userIds, mode=IN},#{splitor, mode=IN},#{invalid_members, mode=OUT, jdbcType=VARCHAR});
+        call usp_output_param(#{userIds, mode=IN},#{splitor, mode=IN},
+        #{invalid_members, mode=OUT, jdbcType=VARCHAR},
+        #{existed_members, mode=OUT, jdbcType=VARCHAR},
+        #{valid_members, mode=OUT, jdbcType=VARCHAR}
+        );
     </select>
     <parameterMap id="mixedMap" type="java.util.Map">
         <parameter property="userIds" jdbcType="VARCHAR" mode="IN"></parameter>
