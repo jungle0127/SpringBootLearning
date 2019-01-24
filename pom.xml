@@ -32,6 +32,7 @@
         <module>springintegration</module>
         <module>shell</module>
         <module>mybatis-demo</module>
+        <module>cache</module>
     </modules>
 
     <dependencyManagement>
