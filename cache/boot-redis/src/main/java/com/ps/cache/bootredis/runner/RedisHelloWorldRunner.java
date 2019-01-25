@@ -17,10 +17,8 @@ import java.util.List;
 
 @Component
 public class RedisHelloWorldRunner implements CommandLineRunner {
-    @Resource(name = "stringRedisTemplate")
+    @Autowired
     private RedisTemplate<String, String> stringRedisTemplate;
-    @Resource(name = "objectRedisTemplate")
-    private RedisTemplate<String, Serializable> objectRedisTemplate;
     @Override
     public void run(String... args) throws Exception {
         this.helloRedis();
