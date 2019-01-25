@@ -49,7 +49,6 @@
     <parameterMap id="mixedMap" type="java.util.Map">
         <parameter property="userIds" jdbcType="VARCHAR" mode="IN"></parameter>
         <parameter property="splitor" jdbcType="CHAR" mode="IN"></parameter>
-        <parameter property="invalid_members" jdbcType="VARCHAR" mode="OUT"></parameter>
     </parameterMap>
 
     <select id="uspResultList" statementType="CALLABLE" resultMap="BaseResultMap" parameterMap="paramMap">

@@ -22,7 +22,7 @@ public class TestRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         this.testMultipleData();
-        this.insertBatchItems();
+        //this.insertBatchItems();
         this.testValidateMembers();
         this.testUspOutputParam();
         this.testUspResultList();
