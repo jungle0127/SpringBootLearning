@@ -14,8 +14,6 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 //@Configuration
 public class RedisConfiguration {
-    @Autowired
-    private RedisTemplate<String,String> redisTemplate;
     @Bean
     public JedisClientConfiguration getJedisClientConfiguration() {
         JedisClientConfiguration.JedisPoolingClientConfigurationBuilder JedisPoolingClientConfigurationBuilder = (
