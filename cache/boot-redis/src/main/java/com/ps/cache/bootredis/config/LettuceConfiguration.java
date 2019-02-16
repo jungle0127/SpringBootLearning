@@ -22,7 +22,7 @@ public class LettuceConfiguration {
     @Bean
     public LettuceConnectionFactory redisConnectionFactory() {
         RedisClusterConfiguration redisClusterConfiguration = new RedisClusterConfiguration();
-        redisClusterConfiguration.setPassword(null);
+        redisClusterConfiguration.setPassword("");
         Iterable<RedisNode> redisNodes = new LinkedList<>();
         String[] clusterNodes = this.redisClusterNode.split(",");
         for(String nodeInfo: clusterNodes){
