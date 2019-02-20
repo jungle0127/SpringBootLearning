@@ -34,6 +34,7 @@
         <module>mybatis-demo</module>
         <module>cache</module>
         <module>startup-src-read</module>
+        <module>web</module>
     </modules>
 
     <dependencyManagement>
