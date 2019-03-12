@@ -17,6 +17,10 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>${spring.mybatis.version}</version>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <resources>

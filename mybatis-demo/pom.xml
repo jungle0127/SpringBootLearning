@@ -14,17 +14,8 @@
     <modules>
         <module>procedure-demo</module>
         <module>procedure-demo-xml</module>
+        <module>mybatis-plus-demo</module>
     </modules>
-    <dependencies>
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${spring.mybatis.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-    </dependencies>
+
 
 </project>

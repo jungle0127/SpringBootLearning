@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: mybatis-plus-generator-demo
+  datasource:
+    url: jdbc:mysql://192.168.19.60:3306/csmp_ums
+    username: volte_kmc
+    password: kmc@volte
+    driver-class-name: com.mysql.cj.jdbc.Driver
